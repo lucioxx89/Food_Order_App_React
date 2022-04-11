@@ -3,6 +3,8 @@ import React from "react";
 import Card from "../UI/Card";
 import classes from "../Meals/AvailableMeals.module.css";
 
+import MealItem from "./MealItem/MealItem";
+
 const DUMMY_MEALS = [
   {
     id: "m1",
@@ -32,7 +34,14 @@ const DUMMY_MEALS = [
 
 const AvailableMeals = () => {
   // option 1 : map save in a variable and pass it to the jsx to have leaner code
-  const mealsList = DUMMY_MEALS.map((meal) => <li>{meal.name}</li>);
+  const mealsList = DUMMY_MEALS.map((meal) => (
+    <MealItem
+      key={meal.id}
+      name={meal.name}
+      description={meal.description}
+      price={meal.price}
+    />
+  ));
   return (
     // <section>               option 2, the map is in jsx but it is  more confusing, lots of code
     //   <ul>
