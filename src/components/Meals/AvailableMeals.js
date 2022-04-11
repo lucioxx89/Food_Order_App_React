@@ -1,5 +1,6 @@
 import React from "react";
 
+import Card from "../UI/Card";
 import classes from "../Meals/AvailableMeals.module.css";
 
 const DUMMY_MEALS = [
@@ -33,7 +34,7 @@ const AvailableMeals = () => {
   // option 1 : map save in a variable and pass it to the jsx to have leaner code
   const mealsList = DUMMY_MEALS.map((meal) => <li>{meal.name}</li>);
   return (
-    // <section>               option 2, the map is in jsx but more confusing, lots of code
+    // <section>               option 2, the map is in jsx but it is  more confusing, lots of code
     //   <ul>
     //     {DUMMY_MEALS.map((meal) => (
     //       <li>{meal.name}</li>
@@ -42,7 +43,9 @@ const AvailableMeals = () => {
     // </section>
 
     <section className={classes.meals}>
-      <ul>{mealsList}</ul>
+      <Card>
+        <ul>{mealsList}</ul>
+      </Card>
     </section>
   );
 };
