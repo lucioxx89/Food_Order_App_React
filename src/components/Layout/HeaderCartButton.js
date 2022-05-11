@@ -9,7 +9,7 @@ import classes from "../Layout/HeaderCartButton.module.css";
 const HeaderCartButton = (props) => {
   const cartCtx = useContext(CartContext);
 
-  const numberOfCartItems = cartCtx.item.reduce((currentNumber, item) => {
+  const numberOfCartItems = cartCtx.items.reduce((currentNumber, item) => {
     return currentNumber + item.amount;
   }, 0);
   return (
